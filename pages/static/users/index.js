@@ -24,7 +24,7 @@ export default Users;
 export async function getStaticProps() {
   const { data } = await axios(`https://reqres.in/api/users`);
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data:data.data }, // will be passed to the page component as props
   };
 }
 

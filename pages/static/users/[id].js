@@ -9,7 +9,7 @@ export default User;
 export const getStaticPaths = async () => {
   const { data } = await axios(`https://reqres.in/api/users`);
   return {
-    paths: data.map((e) => ({ params: { id: String(e.id) } })),
+    paths: data.data.map((e) => ({ params: { id: String(e.id) } })),
     fallback: false,
   };
 };
