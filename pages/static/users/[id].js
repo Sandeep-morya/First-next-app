@@ -16,23 +16,8 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  try {
-    const { data } = await axios(`http://localhost:8080/users/${id}`);
-    return {
-      props: { data },
-    };
-  } catch (error) {
-    return {
-      props: {
-        data: {
-          id,
-          email: "We have only 12 Users",
-          first_name: "User Not",
-          last_name: "Found",
-          avatar:
-            "https://static.india.com/wp-content/uploads/2015/09/Horror.jpg?impolicy=Medium_Resize&w=1200&h=800",
-        },
-      },
-    };
-  }
+  const { data } = await axios(`http://localhost:8080/users/${id}`);
+  return {
+    props: { data },
+  };
 }
