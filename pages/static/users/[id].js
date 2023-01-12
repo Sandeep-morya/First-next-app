@@ -18,6 +18,6 @@ export async function getStaticProps(context) {
   const id = context.params.id;
   const { data } = await axios(`https://reqres.in/api/users/${id}`);
   return {
-    props: { data },
+    props: { data:data.data },
   };
 }
