@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const { data } = await axios(`http://localhost:8080/users/${id}`);
+  const { data } = await axios(`https://reqres.in/api/users/${id}`);
   return {
     props: { data },
   };
